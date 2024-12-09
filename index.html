@@ -114,6 +114,129 @@ dd{margin-left:0}
 
 
 
+<style>div.transheader {display: block;
+    border: solid #ccccbb; padding: 2%;
+    background: #eeeedd ;}
+    .transtitle {color: #555555;
+    background: #eeeedd ;
+    font-weight: bolder;}
+    .divcss1{ text-align:center}
+
+div.issue-title { color: #e05252; }
+div.note-title, div.ednote-title { color: #2b2; }
+div.warning-title { color: #f22; }
+div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
+    text-transform: uppercase;
+}
+div.note, div.issue, div.ednote, div.warning {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.note > p:first-child, .ednote > p:first-child, .issue > p:first-child, .warning > p:first-child { margin-top: 0 }
+.issue, .note, .ednote, .warning {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note , div.ednote,  div.warning {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.ednote, span.issue, span.warning { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note, .ednote {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+.doclinks {
+
+    float: right;
+    border: thin solid black;
+    font-size: x-small;
+    display: block;
+    width: 25%;
+    hyphens: none;
+
+}
+
+.warning {
+    border-color: #f11;
+    border-width: .2em;
+    border-style: solid;
+    background: #fbe9e9;
+}
+
+.warning-title:before{
+    content: "⚠"; /*U+26A0 WARNING SIGN*/
+    font-size: 3em;
+    float: left;
+    height: 100%;
+    padding-right: .3em;
+    vertical-align: top;
+    margin-top: -0.5em;
+}
+
+li.task-list-item {
+    list-style: none;
+}
+
+input.task-list-item-checkbox {
+    margin: 0 0.35em 0.25em -1.6em;
+    vertical-align: middle;
+}
+
+.issue a.respec-gh-label {
+  padding: 5px;
+  margin: 0 2px 0 2px;
+  font-size: 10px;
+  text-transform: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  position: relative;
+  bottom: 2px;
+}
+
+.issue a.respec-label-dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.issue a.respec-label-light {
+  color: #000;
+  background-color: #fff;
+}
+</style><style>/* --- PERMALINKS --- */
+
+.permalink {
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+  font-size: 10pt;
+  font-style: normal;
+  vertical-align: middle;
+  margin-left: 4px;
+  float: right;
+}
+
+.permalink a, .permalink a:link, .permalink a:visited, .permalink a:hover, .permalink a:focus, .permalink a:active {
+  background:transparent !important;
+  text-decoration:none;
+  font-weight: bold;
+  color:#666 !important;
+}
+
+.permalink abbr {
+  border:0;
+}
+</style>
 
 
 
@@ -472,8 +595,65 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "publishISODate": "2022-07-19T00:00:00.000Z",
   "generatedSubtitle": "W3C Recommendation 19 July 2022"
 }</script>
+
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-REC"></head>
-<body data-cite="infra rfc3986 HTML INFRA URL WEBIDL DOM FETCH" class="h-entry"><div class="head">
+<body data-cite="infra rfc3986 HTML INFRA URL WEBIDL DOM FETCH" class="h-entry">
+	<div class="transheader">
+	  <h1 class="transtitle"><span xml:lang="en" lang="en">Decentralized Identifiers (DIDs) v1.0</span></h1>
+	
+	
+	<dl>
+	  <dt><strong><span xml:lang="en" lang="en">Lead Translating Organization:</span></strong></dt>
+	
+	    <dd><span xml:lang="en" lang="en">CAICT, <a href="http://www.zju.edu.cn/">http://www.caict.ac.cn/</a></span></dd>
+	
+	    <dd><span xml:lang="en" lang="en">No.52, Hua Yuan Bei Road, Haidian District, Beijing, China</span></dd>
+	
+	    <dd><span xml:lang="en" lang="en"><a href="jingyue@caicta.c.cn">Yue Jing</a></span></dd>
+		 <dd><span xml:lang="en" lang="en"><a href="zhangbo3@caict.ac.cn">Bo Zhang</a></span></dd>
+	
+	
+	  </dl>
+	
+	
+	<h2 class="transtitle">授权中文翻译</h2>
+	<h2 class="transtitle">2014年12月1日</h2>
+	
+	<!--Date of publication [of the authorized translation]-->
+	<dl>
+	  <dt><strong>此版本:</strong></dt>
+	  <dd> <a href="https://www.w3.org/Translations/WCAG21-zh-20190311/">https://www.w3.org/Translations/WCAG21-zh-20190311/</a>
+	  </dd>
+	  <dt><strong>最新版本:</strong></dt>
+	  <dd> <a href="https://www.w3.org/Translations/WCAG21-zh/">https://www.w3.org/Translations/WCAG21-zh/</a>
+	  </dd>
+	  <dt><strong>原始文档:</strong></dt>
+	  <dd> <a href="https://www.w3.org/TR/did-core/" hreflang=
+	      "en">https://www.w3.org/TR/did-core/</a> </dd>
+	  <dt><strong>勘误页：</strong></dt>
+	  <dd><a href="https://www.w3.org/Translations/WCAG21-zh/Errata.html">https://www.w3.org/Translations/WCAG21-zh/Errata.html</a>
+	  </dd>
+	  <dt><strong>牵头翻译组织：</strong></dt>
+	  <dd> 中国信息通信研究院  <a href="http://www.zju.edu.cn/"> http://www.caict.ac.cn/ </a>
+	  </dd>
+	  <dt><strong>翻译人员：</strong></dt>
+	  <dd> <a href="jingyue@caict.ac.cn">景越</a>，<a href="http://www.caict.ac.cn/ ">中国信息通信研究院</a>；</dd>
+	  <dd> <a href="zhangbo3@caict.ac.cn">张波</a>，<a href="http://www.caict.ac.cn/ ">中国信息通信研究院</a>；</dd>
+
+	  <dt><strong>参与翻译审阅工作的人员名单:</strong></dt>
+	  <dd> 参与翻译审阅的单位及个人：<a href=
+	      "https://lists.w3.org/Archives/Public/w3c-translators/2024OctDec/0020.html"https://lists.w3.org/Archives/Public/w3c-translators/2024OctDec/0020.html</a>
+	  </dd>
+	  <dt><strong>候选授权翻译审阅内容总结：</strong></dt>
+	  <dd><a href="https://w3c.github.io/WCAG21-zh/summary.html">https://w3c.github.io/WCAG21-zh/summary.html</a> </dd>
+	</dl>
+	
+	
+	<p>此版本为授权W3C文档。此翻译文档的发布遵循<a href="https://www.w3.org/2005/02/TranslationPolicy.html" hreflang="en">W3C授权翻译文档流程</a>。如有任何争议，应以原始英文版本为权威版本。</p>
+	
+	</div>
+	
+	<div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">分布式标识（Decentralized Identifiers，DIDs) v1.0</h1> <h2 id="subtitle" class="subtitle">核心架构，数据模型和表示（Core architecture, data model, and representations)</h2>
